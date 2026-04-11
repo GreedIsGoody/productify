@@ -3,10 +3,12 @@ import cors from 'cors'
 
 import {ENV} from './config/env'
 import { clerkMiddleware } from '@clerk/express'
+import { User } from './db/schema';
 
 
 
 const app = express();
+
 
 
 app.use(cors({origin: ENV.FRONTEND_URL}));
