@@ -43,6 +43,7 @@ export const comments = pgTable("comments", {
     createdAt: timestamp("created_at", {mode: "date"}).notNull().defaultNow(),
 });
 
+// relations of data 
 
 export const userRelations = relations(users, ({many}) => ({
     products: many(products),
