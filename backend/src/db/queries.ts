@@ -21,7 +21,7 @@ export const updateUser = async (id: string, data: Partial<NewUser>) => {
 // upsert => create or update
 export const upsertUser = async (data: NewUser) => {
     const existingUser = await getUserById(data.id);
-    if (existingUser) return updateUser(data.id, data)ж
+    if (existingUser) return updateUser(data.id, data)
 
     return createUser(data);
 }
