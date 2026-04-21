@@ -8,10 +8,11 @@ export const syncUser = async (userData) => {
 
 
 //PRODUCT API
-export const syncProducts = async () => {
+export const getAllProducts = async () => {
     const { data } = await api.get("/products");
     return data;
 };
+
 
 // SINGLE PRODUCT BY ID 
 
