@@ -1,5 +1,5 @@
 import { db } from "./index";
-import { eq } from "drizzle-orm";
+import { eq, One } from "drizzle-orm";
 import { users, comments, products, type NewUser, type NewComment, type NewProduct } from "./schema"
 
 
@@ -39,7 +39,8 @@ export const getAllProducts = async () => {
     });
 }
 export const getProductById = async (id: string) => {
-    return db.query.products.findFirst({
+
+    return await db.query.products.findFirst({
         where: eq(products.id, id),
         with: {
             user: true,
@@ -51,8 +52,8 @@ export const getProductById = async (id: string) => {
     });
 };
 
-export const getProductsByUserId = async (userId: string) => {
-    return db.query.products.findFirst({
+export const getProductsByUserId = async (userId: string ) => {
+    return db.query.products.findMany({
         where: eq(products.userId, userId),
         with: {user: true},
         orderBy: (products, { desc }) => [desc(products.createdAt)],
