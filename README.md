@@ -3,6 +3,6 @@ Productify is a full-stack product management platform designed for seamless inv
 🛠️ Tech Stack
 Frontend: Next.js 14/15 (App Router), Tailwind CSS and DaisyUI
 
-Backend: Node.js, TypeScript
+Backend: Node.js, TypeScript, Clerk for autorization
 
 Database: PostgreSQL with Drizzle ORM
